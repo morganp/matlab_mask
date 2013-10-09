@@ -14,7 +14,7 @@ Usage
 
 It is imported as a package into your script or projects. Packages require the parent folder to be added to the search path.
 
-    addpath('your_path_here/matlab_suplabel/package/');
+    addpath('your_path_here/matlab_mask/package/');
     import mask.*
 
     mask.mask(datfile)
