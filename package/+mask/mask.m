@@ -1,19 +1,17 @@
 function mask( datfile )
 
 %% Read in specified file
-%datfile = 'example_mask.dat'; 
-
-load( datfile )
+maskdat = load( datfile );
 
 %%create line
 
 
 %% generate plot
-figure(1)
+figure()
 clf; % clear figure
-plot( example_mask(:,1), example_mask(:,2))
+plot( maskdat(:,1), maskdat(:,2))
 hold on
-plot( example_mask(:,1), example_mask(:,3))
+plot( maskdat(:,1), maskdat(:,3))
 
 end
 
