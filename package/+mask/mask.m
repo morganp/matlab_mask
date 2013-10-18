@@ -24,8 +24,14 @@ maskdat = load( datfile );
  plot( maskdat(:,1), maskdat(:,3))
 
  % Find nice values for axis, so limits are visible
- ymax_dat = max( [maskdat(:,2); maskdat(:,3)]);
- ymin_dat = min( [maskdat(:,2); maskdat(:,3)]);
+ %% take all y values
+ temp_ydata = unique( [maskdat(:,2); maskdat(:,3)] );
+ % remove the -+inf points
+ temp_ydata =  temp_ydata(temp_ydata~=-Inf);
+ temp_ydata =  temp_ydata(temp_ydata~=Inf);
+ 
+ ymax_dat = max( temp_ydata );
+ ymin_dat = min( temp_ydata );
  xmin     = 0;
  xmax     = max( maskdat(:,1) );
 
