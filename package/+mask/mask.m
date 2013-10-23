@@ -7,7 +7,8 @@ function mask( datfile, varargin  )
     addOptional(p,'title','');
     addOptional(p,'xlabel','');
     addOptional(p,'ylabel','');
-parse(p, varargin{:} );
+    addOptional(p,'save_emf_as','');
+    parse(p, varargin{:} );
 
 
 %% Read in specified file
@@ -17,7 +18,7 @@ maskdat = load( datfile );
 
 
  %% Generate plot
- figure()
+ fig = figure();
  clf; % clear figure
  plot( maskdat(:,1), maskdat(:,2))
  hold on
@@ -55,5 +56,9 @@ maskdat = load( datfile );
  xlabel(p.Results.xlabel);
  ylabel(p.Results.ylabel);
 
+ if (~ isequal(p.Results.save_emf_as, '') )
+    saveas(fig, strcat(p.Results.save_emf_as, '.emf'), 'emf');
+ end
+ 
 end
 
