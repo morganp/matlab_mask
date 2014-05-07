@@ -1,7 +1,7 @@
 function mask( datfile, varargin  )
 
 %% Input parsing example :
-% http://www.mathworks.co.uk/help/matlab/ref/inputparserclass.html
+% http://www.mathworks.co.uk/help/matlab/ref/inputparser-class.html
     p = inputParser;
     p.FunctionName = 'mask';
     addOptional(p,'title','');
